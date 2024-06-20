@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on </title>
+    <link>/posts/</link>
+    <description>Recent content in Posts on </description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 20 Jun 2024 05:01:46 +0100</lastBuildDate>
+    <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reversing Solara</title>
+      <link>/posts/my-first-post/</link>
+      <pubDate>Thu, 20 Jun 2024 05:01:46 +0100</pubDate>
+      <guid>/posts/my-first-post/</guid>
+      <description>&lt;p&gt;Reversing the Roblox Exploit, Solara/Solaris&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

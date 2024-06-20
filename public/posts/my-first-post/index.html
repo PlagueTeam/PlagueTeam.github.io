@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+    
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+<script defer language="javascript" type="text/javascript" src="/js/bundle.min.cbcd24d8731b2aea4f1fef1db2519a78fa4d97baf0a2241b1d0b9759cb5d5acc.js"></script>
+
+
+
+
+
+  
+
+
+
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <link rel="icon" href=/favicon.png>
+
+    
+    
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+  
+
+
+<!-- Open Graph image and Twitter Card metadata -->
+
+<title itemprop="name">Plague - Reversing Solara</title>
+<meta property="og:title" content=Plague&#32;-&#32;Reversing&#32;Solara />
+<meta name="twitter:title" content=Plague&#32;-&#32;Reversing&#32;Solara />
+<meta itemprop="name" content=Plague&#32;-&#32;Reversing&#32;Solara />
+<meta name="application-name" content=Plague&#32;-&#32;Reversing&#32;Solara />
+<meta property="og:site_name" content="" />
+
+
+<meta name="description" content="" />
+<meta itemprop="description" content="" />
+<meta property="og:description" content="" />
+<meta name="twitter:description" content="" />
+
+
+<base href="/posts/my-first-post/" />
+<link rel="canonical" href="/posts/my-first-post/" itemprop="url" />
+<meta name="url" content="/posts/my-first-post/" />
+<meta name="twitter:url" content="/posts/my-first-post/" />
+<meta property="og:url" content="/posts/my-first-post/" />
+
+
+<meta property="og:updated_time" content="2024-06-20T05:01:46&#43;01:00" />
+
+
+<link rel="sitemap" type="application/xml" title="Sitemap" href='/sitemap.xml' />
+
+<meta name="robots" content="index,follow" />
+<meta name="googlebot" content="index,follow" />
+
+
+<meta name="twitter:site" content="" />
+<meta name="twitter:creator" content="" />
+<meta property="fb:admins" content="" />
+
+
+<meta name="apple-mobile-web-app-title" content="" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.127.0">
+
+
+    
+    
+
+<link type="text/css" rel="stylesheet" href="/css/bundle.min.94a339836f89f0d25f31980cb6b0631da21e20af128308747ce44e0525eb16ef.css">
+
+
+    
+    <style>
+    body {
+        --sidebar-bg-color: #202020;
+        --sidebar-img-border-color: #515151;
+        --sidebar-p-color: #909090;
+        --sidebar-h1-color: #FFF;
+        --sidebar-a-color: #FFF;
+        --sidebar-socials-color: #FFF;
+        --text-color: #222;
+        --bkg-color: #FAF9F6;
+        --post-title-color: #303030;
+        --list-color: #5a5a5a;
+        --link-color: #268bd2;
+        --date-color: #515151;
+        --table-border-color: #E5E5E5;
+        --table-stripe-color: #F9F9F9;
+        --code-color: #000;
+        --code-background-color: #E5E5E5;
+        --code-block-color: #fff;
+        --code-block-background-color: #272822;
+        --moon-sun-color: #FFF;
+        --moon-sun-background-color: #515151;
+    }
+    body.dark-theme {
+        --text-color: #eee;
+        --bkg-color: #121212;
+        --post-title-color: #DBE2E9;
+        --list-color: #9d9d9d;
+        --link-color: #268bd2;
+        --date-color: #9a9a9a;
+        --table-border-color: #515151;
+        --table-stripe-color: #202020;
+        --code-color: #fff;
+        --code-background-color: #515151;
+        --code-block-color: #fff;
+        --code-block-background-color: #272822;
+    }
+    body {
+        background-color: var(--bkg-color);
+    }
+</style>
+
+</head>
+
+    <body class="dark-theme">
+        <div class="wrapper">
+            <aside class="sidebar">
+    <div class="container sidebar-sticky">
+        <div class="light-dark" align="right">
+    <button class="btn-light-dark" title="Toggle light/dark mode">
+        <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
+            <path fill="currentColor" d="M6 .278a.768.768 0 0 1 .08.858a7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277c.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316a.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71C0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        </svg>
+        <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
+            <path fill="currentColor" d="M8 12a4 4 0 1 0 0-8a4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+        </svg>
+    </button>
+</div>
+
+        <div class="sidebar-about">
+    <h1 class="brand">
+        
+            <a href="/">
+                <img src="https://i.pinimg.com/564x/ce/74/5e/ce745edeec31d09f5b7c2a4cbc116aeb.jpg" alt="brand image">
+            </a>
+        
+        
+            <a href="/">
+                <h1>Plague</h1>
+            </a>
+        
+    </h1>
+    <p class="lead">
+    Plague, a blog for general Reverse Engineering, Cybersecurity and Cheat Development.
+    </p>
+</div>
+
+        <nav>
+    <ul class="sidebar-nav">
+
+        
+        
+        
+
+    </ul>
+</nav>
+
+        
+
+
+
+
+
+
+    <a target="_blank" class="social" title="Discord" href="https://discord.gg/malware">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"/>
+        </svg>
+    </a>
+
+
+
+
+
+
+
+
+
+    <a target="_blank" class="social" title="RSS Feed" href="/posts/index.xml">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1.2em" viewBox="0 0 1280.000000 1280.000000">
+            <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)" fill="currentColor">
+                <path d="M2295 11929 c-284 -12 -642 -45 -707 -65 -17 -5 -18 -63 -18 -1039 0 -569 4 -1036 8 -1039 5 -3 74 6 153 19 510 86 1168 95 1789 25 1348 -153 2602 -677 3670 -1531 385 -308 820 -744 1126 -1129 842 -1060 1362 -2313 1514 -3650 70 -621 61 -1279 -25 -1789 -13 -79 -22 -148 -19 -153 3 -4 471 -8 1039 -8 l1035 0 5 23 c51 225 85 942 67 1419 -23 605 -77 1044 -198 1617 -294 1400 -927 2734 -1823 3846 -1043 1295 -2364 2259 -3909 2854 -1158 447 -2451 656 -3707 600z"/>
+                <path d="M2255 7845 c-269 -25 -620 -81 -667 -106 -17 -9 -18 -55 -18 -899 0 -706 3 -890 13 -890 6 0 66 18 132 41 130 44 288 79 467 105 154 21 577 30 749 15 1207 -107 2267 -823 2814 -1902 166 -327 268 -637 330 -1001 38 -227 48 -384 42 -662 -8 -348 -44 -590 -126 -831 -23 -66 -41 -126 -41 -132 0 -10 184 -13 890 -13 844 0 890 1 899 18 27 50 88 452 110 725 14 162 14 624 1 782 -59 703 -233 1323 -545 1945 -481 956 -1313 1788 -2270 2268 -620 310 -1239 483 -1940 542 -165 14 -669 10 -840 -5z"/>
+                <path d="M2519 3815 c-391 -66 -725 -336 -868 -703 -79 -201 -96 -462 -45 -677 83 -344 338 -641 666 -774 116 -47 205 -69 330 -80 412 -39 811 153 1040 500 193 292 240 648 128 981 -135 403 -492 699 -914 757 -100 14 -241 12 -337 -4z"/>
+            </g>
+        </svg>
+    </a>
+
+
+
+        <p class="footnote">
+powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a target="_blank" href="https://github.com/lukeorth/poison">poison</a>
+    <br>
+    &copy; 2024 . All rights reserved.
+</p>
+
+  </div>
+</aside>
+
+            <main class="content container">
+                <div class="post">
+  <div class="info">
+  <h1 class="post-title">
+    <a href="/posts/my-first-post/">Reversing Solara</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      <time datetime=" 2024-06-20T05:01:46&#43;0100" class="post-date">
+        June 20, 2024
+      </time>
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>5 mins read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+  <p>Reversing the Roblox Exploit, Solara/Solaris</p>
+<h2 id="introduction---what-is-solaris">Introduction - What Is Solaris?</h2>
+<p>Solaris is a new roblox executor that claims to be the &ldquo;best&rdquo; executor on the platform, Today we will reverse their exploit and understand how they are injecting into the roblox process without getting flagged.</p>
+<h2 id="solaris---obfuscation">Solaris - Obfuscation</h2>
+<p>Solaris obfuscation is a simple one, They wrap their functions around other functions around other functions and so on, Making static analysis a bit more difficult, But we overcome this obfuscation in the next part.</p>
+<h2 id="solaris---injection-function">Solaris - Injection Function</h2>
+<p>After searching for string references, I have managed to find Solaris main injection function, Which might look like this for you in IDA.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">__int64</span> <span style="color:#a6e22e">SolarisInjectionFunction</span>()
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>v0; <span style="color:#75715e">// rdi
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">__int64</span> i; <span style="color:#75715e">// rcx
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">__int64</span> v2; <span style="color:#75715e">// rax
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  FARPROC LdrQueryProcessModuleInformation; <span style="color:#75715e">// rax
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  FARPROC v4; <span style="color:#75715e">// rax
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">NTSTATUS</span> (<span style="color:#66d9ef">__stdcall</span> <span style="color:#f92672">*</span>NtQuerySystemInformation)(SYSTEM_INFORMATION_CLASS, PVOID, ULONG, PULONG); <span style="color:#75715e">// rax
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">NTSTATUS</span> (<span style="color:#66d9ef">__stdcall</span> <span style="color:#f92672">*</span>NtQueryInformationProcess
+</span></span><span style="display:flex;"><span>  )(HANDLE, PROCESSINFOCLASS, PVOID, ULONG, PULONG); <span style="color:#75715e">// rax
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  HANDLE v7; <span style="color:#75715e">// rax
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">NTSTATUS</span> (<span style="color:#66d9ef">__stdcall</span> <span style="color:#f92672">*</span>NtQueryObject)(HANDLE, OBJECT_INFORMATION_CLASS, PVOID, ULONG, PULONG); <span style="color:#75715e">// rax
+</span></span></span></code></pre></div><p>This part is very straight forward, It first starts defining some variables for future usage in the function, then defines some function prototypes, Those will be used when calling the functions for injecting into the process, Here are all the functions used:</p>
+<pre tabindex="0"><code>-- NTAPI Functions --
+LdrQueryProcessModuleInformation
+NtQuerySystemInformation
+NtQueryInformationProcess
+NtQueryObject
+NtAllocateVirtualMemory
+ZwAssociateWaitCompletionPacket
+
+-- Windows API Functions --
+DuplicateHandle
+CreateThreadpoolWait
+VirtualAllocEx
+WriteProcessMemory
+</code></pre><p>From this, We can get a basic overview of what the injector is doing, Looking a bit further into the pseudo code, We encounter this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>NtQuerySystemInformation <span style="color:#f92672">=</span> (<span style="color:#a6e22e">NTSTATUS</span> (<span style="color:#66d9ef">__stdcall</span> <span style="color:#f92672">*</span>)(SYSTEM_INFORMATION_CLASS, PVOID, ULONG, PULONG))<span style="color:#a6e22e">GetProcAddress</span>(hModule, <span style="color:#e6db74">&#34;NtQuerySystemInformation&#34;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> ( ((<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> (<span style="color:#66d9ef">__fastcall</span> <span style="color:#f92672">*</span>)(<span style="color:#66d9ef">__int64</span>, <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>, <span style="color:#66d9ef">__int64</span>, _QWORD))NtQuerySystemInformation)(
+</span></span><span style="display:flex;"><span>                   <span style="color:#ae81ff">5</span>i64,
+</span></span><span style="display:flex;"><span>                   v26,
+</span></span><span style="display:flex;"><span>                   <span style="color:#ae81ff">10000000</span>i64,
+</span></span><span style="display:flex;"><span>                   <span style="color:#ae81ff">0</span>i64) )
+</span></span></code></pre></div><p>Simplifying the function call to <code>NtQuerySystemInformation</code>, We get:</p>
+<pre tabindex="0"><code>NtQuerySystemInformation(SystemProcessInformation, SystemInformation, SystemInformationLength, ReturnLength)
+</code></pre><p>We can see solaris enumerating the systems processes to find the roblox process:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ( <span style="color:#f92672">*</span>((_QWORD <span style="color:#f92672">*</span>)k <span style="color:#f92672">+</span> <span style="color:#ae81ff">8</span>) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">wcscmp</span>(<span style="color:#f92672">*</span>((<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">wchar_t</span> <span style="color:#f92672">**</span>)k <span style="color:#f92672">+</span> <span style="color:#ae81ff">8</span>), <span style="color:#e6db74">L</span><span style="color:#e6db74">&#34;RobloxPlayerBeta.exe&#34;</span>)
+</span></span></code></pre></div><p>This is checking the name of the current process entry to <code>RobloxPlayerBeta.exe</code>, After it has found the roblox process, It opens a handle to it using <code>OpenProcess</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span> hSourceProcessHandle <span style="color:#f92672">=</span> <span style="color:#a6e22e">OpenProcess</span>(<span style="color:#ae81ff">0x1FFFFFu</span>, <span style="color:#ae81ff">0</span>, k[<span style="color:#ae81ff">20</span>])
+</span></span></code></pre></div><p><code>k[20]</code> is just the ID for the roblox process, Pay attention to <code>hSourceProcessHandle</code>, This indicates that we are probably duplicating a handle with <code>DuplicateHandle</code> for handle hijacking, Now Solaris can start doing its actual job, It will enumerate the handle table of the process with <code>NtQueryInformationProcess</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>NtQueryInformationProcess <span style="color:#f92672">=</span> (<span style="color:#a6e22e">NTSTATUS</span> (<span style="color:#66d9ef">__stdcall</span> <span style="color:#f92672">*</span>)(HANDLE, PROCESSINFOCLASS, PVOID, ULONG, PULONG))<span style="color:#a6e22e">GetProcAddress</span>(hModule, <span style="color:#e6db74">&#34;NtQueryInformationProcess&#34;</span>);
+</span></span><span style="display:flex;"><span>                ((<span style="color:#66d9ef">void</span> (<span style="color:#66d9ef">__fastcall</span> <span style="color:#f92672">*</span>)(HANDLE, <span style="color:#66d9ef">__int64</span>, _QWORD <span style="color:#f92672">*</span>, <span style="color:#66d9ef">__int64</span>, _QWORD))NtQueryInformationProcess)(
+</span></span><span style="display:flex;"><span>                  <span style="color:#a6e22e">hSourceProcessHandle</span> (Roblox Process Handle),
+</span></span><span style="display:flex;"><span>                  <span style="color:#ae81ff">51</span>i64,
+</span></span><span style="display:flex;"><span>                  v43,
+</span></span><span style="display:flex;"><span>                  <span style="color:#ae81ff">1000000</span>i64,
+</span></span><span style="display:flex;"><span>                  <span style="color:#ae81ff">0</span>i64);
+</span></span></code></pre></div><p>Now obviously, Handles inside the handle table Solaris fetched aren&rsquo;t actually usable, This is where handle hijacking comes into play, Solaris will simply duplicate the handle with flag <code>IO_COMPLETION_ALL_ACCESSS</code>, Giving us a new usable duplicate of it.
+Now it will check to see if the handle is of type <code>IoCompletion</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ( <span style="color:#f92672">!</span><span style="color:#a6e22e">wcscmp</span>(<span style="color:#e6db74">L</span><span style="color:#e6db74">&#34;IoCompletion&#34;</span>, <span style="color:#f92672">*</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">wchar_t</span> <span style="color:#f92672">**</span>)(v44 <span style="color:#f92672">+</span> <span style="color:#ae81ff">8</span>)) )
+</span></span></code></pre></div><p>If you&rsquo;re wondering how they got the handle type information, They used <code>NtQueryObject</code> with <code>ObjectTypeInformation</code>, Let&rsquo;s quickly recap what the executor just did, It enumerated the systems processes to find the roblox process, Open a handle to it, Get its handle table, Find an <code>IoCompletion</code> handle and hijack it.</p>
+<p>It&rsquo;s good to note that so far this attack is very similar if not the same as <code>PoolParty</code>, Which is a popular injection method used in malware and cheats.</p>
+<p>Now this is where the actual injection happens:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>lpBuffer <span style="color:#f92672">=</span> <span style="color:#a6e22e">CreateThreadpoolWait</span>(
+</span></span><span style="display:flex;"><span>                                 (PTP_WAIT_CALLBACK)((<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>)sub_140011483 <span style="color:#f92672">+</span> v33[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">-</span> v30[<span style="color:#ae81ff">2</span>]),
+</span></span><span style="display:flex;"><span>                                 <span style="color:#ae81ff">0</span>i64,
+</span></span><span style="display:flex;"><span>                                 <span style="color:#ae81ff">0</span>i64);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    lpBaseAddress <span style="color:#f92672">=</span> <span style="color:#a6e22e">VirtualAllocEx</span>(hSourceProcessHandle, <span style="color:#ae81ff">0</span>i64, <span style="color:#ae81ff">0x1D8u</span>i64, <span style="color:#ae81ff">0x3000u</span>, <span style="color:#ae81ff">4u</span>);
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">WriteProcessMemory</span>(hSourceProcessHandle, lpBaseAddress, lpBuffer, <span style="color:#ae81ff">0x1D8u</span>i64, <span style="color:#ae81ff">0</span>i64);
+</span></span><span style="display:flex;"><span>                    v46 <span style="color:#f92672">=</span> <span style="color:#a6e22e">VirtualAllocEx</span>(hSourceProcessHandle, <span style="color:#ae81ff">0</span>i64, <span style="color:#ae81ff">0x48u</span>i64, <span style="color:#ae81ff">0x3000u</span>, <span style="color:#ae81ff">4u</span>);
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">WriteProcessMemory</span>(hSourceProcessHandle, v46, (<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>)lpBuffer <span style="color:#f92672">+</span> <span style="color:#ae81ff">392</span>, <span style="color:#ae81ff">0x48u</span>i64, <span style="color:#ae81ff">0</span>i64);
+</span></span><span style="display:flex;"><span>                    hEvent <span style="color:#f92672">=</span> <span style="color:#a6e22e">CreateEventW</span>(<span style="color:#ae81ff">0</span>i64, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">L</span><span style="color:#e6db74">&#34;PoolPartyEvent&#34;</span>);
+</span></span><span style="display:flex;"><span>                    ZwAssociateWaitCompletionPacket <span style="color:#f92672">=</span> <span style="color:#a6e22e">GetProcAddress</span>(hModule, <span style="color:#e6db74">&#34;ZwAssociateWaitCompletionPacket&#34;</span>);
+</span></span><span style="display:flex;"><span>                    ((<span style="color:#66d9ef">void</span> (<span style="color:#66d9ef">__fastcall</span> <span style="color:#f92672">*</span>)(_QWORD, HANDLE, HANDLE, LPVOID, LPVOID, _QWORD, _QWORD, _QWORD))ZwAssociateWaitCompletionPacket)(
+</span></span><span style="display:flex;"><span>                      <span style="color:#f92672">*</span>((_QWORD <span style="color:#f92672">*</span>)lpBuffer <span style="color:#f92672">+</span> <span style="color:#ae81ff">46</span>),
+</span></span><span style="display:flex;"><span>                      v42,
+</span></span><span style="display:flex;"><span>                      hEvent,
+</span></span><span style="display:flex;"><span>                      v46,
+</span></span><span style="display:flex;"><span>                      lpBaseAddress,
+</span></span><span style="display:flex;"><span>                      <span style="color:#ae81ff">0</span>i64,
+</span></span><span style="display:flex;"><span>                      <span style="color:#ae81ff">0</span>i64,
+</span></span><span style="display:flex;"><span>                      <span style="color:#ae81ff">0</span>i64);
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">SetEvent</span>(hEvent);
+</span></span></code></pre></div><p>It first creates a threadpool wait object, With the callback function being <code>sub_140011483</code>, Looking into this function we find this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>BOOL <span style="color:#a6e22e">sub_140012310</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  FILE <span style="color:#f92672">*</span>v0; <span style="color:#75715e">// rax
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  FILE <span style="color:#f92672">*</span>v1; <span style="color:#75715e">// rax
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  HWND hWnd; <span style="color:#75715e">// [rsp+48h] [rbp+8h]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">sub_1400114EC</span>((<span style="color:#66d9ef">__int64</span>)<span style="color:#f92672">&amp;</span>unk_1400260F4);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">AllocConsole</span>();
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">SetConsoleTitleA</span>(<span style="color:#e6db74">&#34;injection for oxy until they pay me my 3 month nitro&#34;</span>);
+</span></span><span style="display:flex;"><span>  v0 <span style="color:#f92672">=</span> <span style="color:#a6e22e">_acrt_iob_func</span>(<span style="color:#ae81ff">1u</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">freopen</span>(<span style="color:#e6db74">&#34;CONOUT$&#34;</span>, <span style="color:#e6db74">&#34;w&#34;</span>, v0);
+</span></span><span style="display:flex;"><span>  v1 <span style="color:#f92672">=</span> <span style="color:#a6e22e">_acrt_iob_func</span>(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">freopen</span>(<span style="color:#e6db74">&#34;CONIN$&#34;</span>, <span style="color:#e6db74">&#34;r&#34;</span>, v1);
+</span></span><span style="display:flex;"><span>  hWnd <span style="color:#f92672">=</span> <span style="color:#a6e22e">GetConsoleWindow</span>();
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">SetWindowPos</span>(hWnd, HWND_MESSAGE<span style="color:#f92672">|</span><span style="color:#ae81ff">0x2</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0x63u</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">sub_14001124E</span>(<span style="color:#e6db74">&#34;alloconsole() test&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">FreeConsole</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This is the function that gets executed in the remote process, It just creates a console and sets its title and its pipes, Then sets its position.</p>
+<p>Back to our original injection function, We see that solaris is allocating memory in the process with <code>VirtualAllocEx</code>, Then writing to the allocated memory in the process with <code>WriteProcessMemory</code> with the buffer (what&rsquo;s being written to the memory) being the threadpool object that it created, This initializes the poolparty injection attack, Then it creates an event object with <code>CreateEventW</code>, After that the function that initializes the injection <code>ZwAssociateWaitCompletionPacket</code> is called with the event object, the threadpool wait object and our <code>IoCompletion</code> handle we hijacked earlier, This basically inserts a new <code>TP_IO</code> work item into roblox&rsquo;s thread pool, Effectively achieving injection.</p>
+<h2 id="summary">Summary</h2>
+<p>This was a very quick static analysis of the Solaris roblox executor (the injection part only), Hopefully you enjoyed reading this little writeup and maybe learnt one thing or two, If you&rsquo;re still confused about some parts of the <code>PoolParty</code> injection then i recommend reading this <a href="https://urien.gitbook.io/diago-lima/a-deep-dive-into-exploiting-windows-thread-pools/attacking-worker-factories" target="_blank">blog post</a>.</p>
+  
+  <hr>
+<div class="footer">
+    
+	    
+	    
+    
+</div>
+
+  
+</div>
+            </main>
+            
+  
+    <div class="article-toc ">
+    <div class="toc-wrapper">
+      <h4 id="contents"></h4>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction---what-is-solaris">Introduction - What Is Solaris?</a></li>
+    <li><a href="#solaris---obfuscation">Solaris - Obfuscation</a></li>
+    <li><a href="#solaris---injection-function">Solaris - Injection Function</a></li>
+    <li><a href="#summary">Summary</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+  
+
+        </div>
+    </body>
+</html>
